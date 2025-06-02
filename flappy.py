@@ -1,5 +1,6 @@
 import pygame
 import coordinates_and_radiuses as coord
+import random
 # import gravity_for_bird as gravity
 
 pygame.init()
@@ -62,10 +63,15 @@ while(running):
         if bird_rect.colliderect(rect):
             game_lost()
             continue
+        
+        if rect.x - coord.pipe_width <= 0:
+            if coord.first_pipe:
+                coord.change_pipes_positions1()
+            else:
+                coord.change_pipes_positions2()
+            coord.first_pipe = not coord.first_pipe
+            pygame.display.update()
 
-        if rect.x <= coord.pipe_width:
-            coord.change_pipes_positions()
-    
     for rect in coord.obstacles.values():
         pygame.display.update()
         rect.x -= bird_vel[0]
