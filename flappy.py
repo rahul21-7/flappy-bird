@@ -1,7 +1,6 @@
 import pygame
 import coordinates_and_radiuses as coord
 import random
-# import gravity_for_bird as gravity
 
 pygame.init()
 
