@@ -40,8 +40,10 @@ def change_pipes_positions1():
     top_pipe_x = width - pipe_width/2
     bottom_pipe_x = width - pipe_width/2
 
-    obstacles['top_pipe_1'] = pygame.Rect(top_pipe_x + width/2,top_pipe_y,pipe_width,top_pipe_height)
-    obstacles['bottom_pipe_1'] = pygame.Rect(bottom_pipe_x + width/2,bottom_pipe_y,pipe_width,bottom_pipe_height)
+    height_change = random.randint(0,height//4)
+
+    obstacles['top_pipe_1'] = pygame.Rect(top_pipe_x + width/2,top_pipe_y - height_change,pipe_width,top_pipe_height)
+    obstacles['bottom_pipe_1'] = pygame.Rect(bottom_pipe_x + width/2,bottom_pipe_y - height_change,pipe_width,bottom_pipe_height + height_change)
     return
 
 def change_pipes_positions2():
@@ -50,13 +52,8 @@ def change_pipes_positions2():
     top_pipe_x = width - pipe_width/2
     bottom_pipe_x = width - pipe_width/2
 
+    height_change = random.randint(0,height//4)
     
-    obstacles['top_pipe_2'] = pygame.Rect((top_pipe_x + width/2),(top_pipe_y - height/4),pipe_width,(top_pipe_height))
-    obstacles['bottom_pipe_2'] = pygame.Rect((bottom_pipe_x + width/2),(bottom_pipe_y - height/4),pipe_width,(bottom_pipe_height + height/4))
+    obstacles['top_pipe_2'] = pygame.Rect((top_pipe_x + width/2),(top_pipe_y - height_change),pipe_width,(top_pipe_height))
+    obstacles['bottom_pipe_2'] = pygame.Rect((bottom_pipe_x + width/2),(bottom_pipe_y - height_change),pipe_width,(bottom_pipe_height + height_change))
 
-
-
-# bird_rect = {
-#     "left" : bird_pos[0] - bird_radius
-#     ""
-# }
